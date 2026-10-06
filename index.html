@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>КазУстьеМаш — устьевое оборудование: производство, монтаж, ремонт</title>
+<meta name="description" content="Казахстанский производитель фонтанной арматуры. Монтаж и пусконаладка, ремонт и ревизия, сервисное обслуживание устьевого оборудования">
+<meta name="theme-color" content="#0A0F13">
+<meta property="og:type" content="website">
+<meta property="og:title" content="КазУстьеМаш — устьевое оборудование">
+<meta property="og:description" content="Производство фонтанной арматуры, монтаж и пусконаладка, ремонт и ревизия, сервисное обслуживание.">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "КазУстьеМаш",
+  "description": "Производство фонтанной арматуры, монтаж, ремонт и сервис устьевого оборудования",
+  "telephone": "+77122304518",
+  "email": "info@kazustyemash.kz",
+  "foundingDate": "2011",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Промышленная, 14",
+    "addressLocality": "Атырау",
+    "addressCountry": "KZ"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #0E1318;
+    --bg-deep: #0A0F13;
+    --panel: #121A21;
+    --line: #26313B;
+    --text: #C5CED6;
+    --head: #F2F5F7;
+    --muted: #8A98A5;
+    --accent: #4A9AE8;
+    --on-accent: #08121C;
+    --error: #F08A7E;
+
+    --f-head: "Oswald", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+    --f-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+
+    --wrap: 1200px;
+    --gutter: 24px;
+    --header-h: 68px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 16px/1.6 var(--f-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3 { font-family: var(--f-head); color: var(--head); font-weight: 600; line-height: 1.15; margin: 0; letter-spacing: .01em; }
+  h1 { font-size: clamp(34px, 5vw, 56px); text-transform: uppercase; }
+  h2 { font-size: clamp(28px, 3.4vw, 40px); text-transform: uppercase; }
+  h3 { font-size: 21px; font-weight: 500; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+  .skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--on-accent); padding: 8px 14px; font-weight: 600; }
+  .skip:focus { left: 8px; }
+
+  .eyebrow {
+    font: 500 13px/1 var(--f-mono);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent); }
+
+  section { padding: 96px 0; border-top: 1px solid var(--line); }
+  section.alt { background: var(--bg-deep); }
+  .section-head { max-width: 760px; margin-bottom: 48px; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 26px;
+    font: 600 15px/1 var(--f-body); letter-spacing: .02em;
+    border: 1px solid var(--accent); border-radius: 2px;
+    cursor: pointer; transition: background-color .15s, color .15s, border-color .15s;
+    text-decoration: none !important;
+  }
+  .btn-primary { background: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: #6AAEF0; border-color: #6AAEF0; }
+  .btn-ghost { background: transparent; color: var(--head); border-color: var(--line); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 15, 19, .94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap { height: var(--header-h); display: flex; align-items: center; gap: 32px; }
+  .logo { display: flex; align-items: center; gap: 12px; color: var(--head); text-decoration: none !important; flex: none; }
+  .logo-mark { width: 34px; height: 34px; }
+  .logo-text { font: 600 20px/1 var(--f-head); text-transform: uppercase; letter-spacing: .04em; }
+  .logo-text small { display: block; font: 400 11px/1.3 var(--f-mono); color: var(--muted); letter-spacing: .08em; margin-top: 3px; text-transform: none; }
+  .nav { display: flex; gap: 28px; margin-left: auto; }
+  .nav a { color: var(--text); font-size: 15px; font-weight: 500; }
+  .nav a:hover { color: var(--head); text-decoration: none; }
+  .header-phone { font: 500 16px/1 var(--f-mono); color: var(--head); white-space: nowrap; }
+  .header-phone:hover { color: var(--accent); text-decoration: none; }
+  .menu-btn { display: none; margin-left: auto; background: none; border: 1px solid var(--line); color: var(--head); width: 44px; height: 44px; border-radius: 2px; cursor: pointer; }
+  .menu-btn svg { width: 20px; height: 20px; margin: auto; }
+
+  /* Hero */
+  .hero { padding: 72px 0 88px; border-top: 0; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: .28;
+    mask-image: radial-gradient(ellipse at 75% 40%, #000 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 75% 40%, #000 0%, transparent 70%);
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .hero-lead { margin-top: 24px; font-size: 19px; max-width: 580px; }
+  .hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-facts { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--line); }
+  .hero-facts li { padding: 18px 28px 0 0; margin-right: 28px; border-right: 1px solid var(--line); }
+  .hero-facts li:last-child { border-right: 0; margin-right: 0; }
+  .hero-facts b { display: block; font: 500 22px/1.1 var(--f-mono); color: var(--head); }
+  .hero-facts span { font-size: 13px; color: var(--muted); }
+
+  .scheme { position: relative; }
+  .scheme figcaption { margin-top: 12px; font: 400 12px/1.4 var(--f-mono); color: var(--muted); text-align: center; letter-spacing: .04em; }
+  .scheme svg { width: 100%; height: auto; }
+  .scheme .stroke { stroke: #9FB0BE; }
+  .scheme .metal { fill: #1A242D; stroke: #9FB0BE; stroke-width: 1.5; }
+  .scheme .metal-hi { fill: #222E38; stroke: #C5CED6; stroke-width: 1.5; }
+  .scheme .wheel { fill: none; stroke: var(--accent); stroke-width: 2; }
+  .scheme .callout { stroke: var(--accent); stroke-width: 1; fill: none; }
+  .scheme .dot { fill: var(--accent); }
+  .scheme .lbl { font: 500 12.5px var(--f-body); fill: var(--head); }
+  .scheme .num { font: 500 11px var(--f-mono); fill: var(--accent); }
+  .scheme .ground { stroke: var(--line); stroke-width: 1; }
+  .flow { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 10; fill: none; opacity: .8; animation: flow 1.6s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset: -32; } }
+
+  /* Directions */
+  .dirs { padding: 0; border-top: 1px solid var(--line); background: var(--bg-deep); }
+  .dirs ul { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .dirs li { padding: 32px 28px; border-left: 1px solid var(--line); display: flex; gap: 16px; align-items: flex-start; }
+  .dirs li:last-child { border-right: 1px solid var(--line); }
+  .dirs .ico { width: 40px; height: 40px; flex: none; color: var(--accent); }
+  .dirs h3 { font-size: 18px; }
+  .dirs p { font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+  /* Products */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .prod-text p + p { margin-top: 16px; }
+  .prod-text .lead { font-size: 18px; color: var(--head); }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--panel); -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; min-width: 460px; }
+  caption { text-align: left; padding: 16px 20px; font: 500 13px/1 var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .1em; border-bottom: 1px solid var(--line); }
+  th, td { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child th, tr:last-child td { border-bottom: 0; }
+  th { font-weight: 500; color: var(--muted); width: 42%; font-size: 15px; }
+  td { font: 500 15px/1.5 var(--f-mono); color: var(--head); }
+  .table-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+  .advantages { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .advantages li { background: var(--bg); padding: 28px 24px; }
+  .advantages .n { font: 500 13px/1 var(--f-mono); color: var(--accent); }
+  .advantages h3 { margin-top: 14px; font-size: 19px; }
+  .advantages p { margin-top: 8px; font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+
+  /* Services */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--panel); border: 1px solid var(--line); padding: 32px 28px; display: flex; flex-direction: column; transition: border-color .2s; }
+  .card:hover { border-color: #3A4A58; }
+  .card .ico { width: 44px; height: 44px; color: var(--accent); }
+  .card h3 { margin-top: 24px; font-size: 23px; }
+  .card > p { margin-top: 10px; color: var(--muted); font-size: 15px; }
+  .card ul { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+  .card li { position: relative; padding-left: 20px; font-size: 15px; }
+  .card li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 2px; background: var(--accent); }
+
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; position: relative; }
+  .step { padding: 0 28px 0 0; position: relative; }
+  .step-num {
+    width: 56px; height: 56px; border: 1px solid var(--accent); color: var(--accent);
+    display: grid; place-items: center; font: 500 18px/1 var(--f-mono); background: var(--bg-deep); position: relative; z-index: 1;
+  }
+  .step::after { content: ""; position: absolute; top: 28px; left: 56px; right: 0; height: 1px; background: var(--line); }
+  .step:last-child::after { display: none; }
+  .step h3 { margin-top: 24px; }
+  .step p { margin-top: 10px; color: var(--muted); font-size: 15px; }
+  .step .time { display: inline-block; margin-top: 14px; font: 400 12.5px/1 var(--f-mono); color: var(--text); border: 1px solid var(--line); padding: 6px 10px; }
+
+  /* About */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); margin-top: 32px; }
+  .stats li { padding: 24px; border-left: 1px solid var(--line); }
+  .stats li:first-child { border-left: 0; }
+  .stats b { display: block; font: 600 38px/1 var(--f-head); color: var(--head); }
+  .stats span { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .facts { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .facts li { background: var(--panel); padding: 24px 24px 24px 76px; position: relative; }
+  .facts .ico { position: absolute; left: 24px; top: 24px; width: 32px; height: 32px; color: var(--accent); }
+  .facts h3 { font-size: 18px; }
+  .facts p { margin-top: 6px; font-size: 15px; color: var(--muted); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .badges span { font: 500 12.5px/1 var(--f-mono); color: var(--head); border: 1px solid var(--line); padding: 7px 10px; background: var(--bg); }
+
+  /* Contacts */
+  .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: start; }
+  .contact-list { margin-top: 32px; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .contact-list li { padding: 20px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: baseline; }
+  .contact-list .k { font: 400 12.5px/1.4 var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .contact-list .v { color: var(--head); font-size: 17px; }
+  .contact-list .v a { color: var(--head); }
+  .contact-list .v a:hover { color: var(--accent); }
+  .contact-list .big { font: 500 22px/1.2 var(--f-mono); }
+  .messengers { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .form { background: var(--panel); border: 1px solid var(--line); padding: 36px; }
+  .form h3 { font-size: 26px; text-transform: uppercase; font-weight: 600; }
+  .form > p { margin-top: 8px; color: var(--muted); font-size: 15px; }
+  .fields { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-size: 14px; font-weight: 500; color: var(--head); }
+  .field label .req { color: var(--accent); }
+  .field input, .field textarea, .field select {
+    width: 100%; background: var(--bg-deep); color: var(--head);
+    border: 1px solid var(--line); border-radius: 2px;
+    font: 400 16px/1.4 var(--f-body); padding: 14px 16px; min-height: 50px;
+    transition: border-color .15s;
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238A98A5' stroke-width='1.6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 12px; padding-right: 40px; }
+  .field input::placeholder, .field textarea::placeholder { color: #5E6C78; }
+  .field input:hover, .field textarea:hover, .field select:hover { border-color: #3A4A58; }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .field [aria-invalid="true"] { border-color: var(--error); }
+  .field .err { font-size: 13.5px; color: var(--error); min-height: 0; }
+  .field .err:empty { display: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-foot { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+  .consent { font-size: 13px; color: var(--muted); flex: 1; min-width: 220px; line-height: 1.5; }
+  .form-status { margin-top: 20px; padding: 16px 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent); background: var(--bg-deep); font-size: 15px; color: var(--head); }
+  .form-status[hidden] { display: none; }
+  .form-status.is-error { border-left-color: var(--error); }
+
+  /* Footer */
+  .site-footer { background: var(--bg-deep); border-top: 1px solid var(--line); padding: 40px 0; font-size: 14px; color: var(--muted); }
+  .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; align-items: center; }
+  .site-footer .demo { font: 400 12px/1.5 var(--f-mono); color: #6F7D8A; flex-basis: 100%; padding-top: 16px; border-top: 1px solid var(--line); }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .nav { gap: 20px; }
+    .dirs li { padding: 28px 20px; }
+  }
+  @media (max-width: 980px) {
+    :root { --gutter: 24px; }
+    section { padding: 72px 0; }
+    .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .scheme { max-width: 560px; margin: 0 auto; width: 100%; }
+    .dirs ul { grid-template-columns: 1fr 1fr; }
+    .dirs li { border-bottom: 1px solid var(--line); }
+    .dirs li:nth-child(2n) { border-right: 1px solid var(--line); }
+    .advantages { grid-template-columns: 1fr 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 40px 0; }
+    .step:nth-child(2)::after { display: none; }
+    .nav, .header-phone { display: none; }
+    .menu-btn { display: grid; }
+    .nav.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: var(--header-h); left: 0; right: 0;
+      background: var(--bg-deep); border-bottom: 1px solid var(--line); padding: 8px var(--gutter) 16px;
+    }
+    .nav.open a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+    .nav.open .nav-phone { display: block; font-family: var(--f-mono); color: var(--accent); border-bottom: 0; }
+  }
+  .nav-phone { display: none; }
+  @media (max-width: 620px) {
+    :root { --gutter: 16px; --header-h: 60px; }
+    body { font-size: 15.5px; }
+    section { padding: 56px 0; }
+    .hero { padding: 40px 0 56px; }
+    .hero-lead { font-size: 17px; }
+    .hero-actions .btn { width: 100%; }
+    .hero-facts li { padding-right: 16px; margin-right: 16px; }
+    .hero-facts b { font-size: 18px; }
+    .dirs ul { grid-template-columns: 1fr; }
+    .dirs li { border-right: 1px solid var(--line); }
+    .advantages { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 32px; }
+    .step { padding: 0 0 0 76px; min-height: 56px; }
+    .step-num { position: absolute; left: 0; top: 0; }
+    .step::after { display: block; top: 56px; left: 28px; right: auto; width: 1px; height: calc(100% - 24px); }
+    .step:nth-child(2)::after { display: block; }
+    .step:last-child::after { display: none; }
+    .step h3 { margin-top: 12px; }
+    .stats { grid-template-columns: 1fr; }
+    .stats li { border-left: 0; border-top: 1px solid var(--line); display: flex; align-items: baseline; gap: 16px; }
+    .stats li:first-child { border-top: 0; }
+    .stats span { margin-top: 0; }
+    .stats b { font-size: 30px; min-width: 96px; }
+    .form { padding: 24px 18px; }
+    .fields { grid-template-columns: 1fr; }
+    .form-foot .btn, .messengers .btn { width: 100%; }
+    .contact-list li { grid-template-columns: 1fr; gap: 4px; }
+    .logo-text small { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .flow { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<!-- Декоративные иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-factory" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M4 34V18l9 5v-5l9 5v-5l9 5V6h5v28H4z"/><path d="M10 28h4M18 28h4M26 28h4"/>
+    </symbol>
+    <symbol id="i-wrench" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M25 6a8 8 0 0 0-7.5 10.7L5.5 28.7a3 3 0 0 0 4.2 4.2l12-12A8 8 0 0 0 33.5 13l-5 5-4.6-1-1-4.6 5-5A8 8 0 0 0 25 6z"/>
+    </symbol>
+    <symbol id="i-gauge" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="20" cy="22" r="13"/><path d="M20 22l7-7M20 9v3M9 22h3M28 22h3M12.5 14.5l2 2"/><circle cx="20" cy="22" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-valve" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M4 18h8v10H4zM28 18h8v10h-8zM12 16h16v14H12z"/><path d="M20 16V8M13 8h14"/>
+    </symbol>
+    <symbol id="i-cert" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M8 4h18l6 6v26H8z"/><path d="M26 4v6h6M13 16h14M13 21h14M13 26h8"/>
+    </symbol>
+    <symbol id="i-truck" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M3 10h21v18H3zM24 16h7l6 6v6H24z"/><circle cx="10" cy="30" r="3"/><circle cx="30" cy="30" r="3"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.6-.3z"/>
+    </symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.9 4.3l-3.2 15.1c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.3z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="КазУстьеМаш — на главную">
+      <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" fill="none" stroke="#4A9AE8" stroke-width="2"/>
+        <path d="M17 6v22M11 10h12M8 16h18M11 22h12" stroke="#F2F5F7" stroke-width="2" fill="none"/>
+      </svg>
+      <span class="logo-text">КазУстьеМаш<small>устьевое оборудование</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#products">Продукция</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как мы работаем</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav-phone" href="tel:+77122304518" data-event="click_phone">+7 (7122) 30-45-18</a>
+    </nav>
+    <a class="header-phone" href="tel:+77122304518" data-event="click_phone">+7 (7122) 30-45-18</a>
+    <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.8"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 2. Первый экран -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Производитель · Казахстан</p>
+        <h1>Устьевое оборудование для нефтяных и газовых скважин</h1>
+        <p class="hero-lead">Производим фонтанную арматуру, выполняем монтаж и пусконаладку, ремонт и ревизию, обслуживаем устье на всём сроке эксплуатации скважины</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacts" data-event="cta_hero">Запросить коммерческое предложение</a>
+          <a class="btn btn-ghost" href="#products">Смотреть продукцию</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>21–70 МПа</b><span>рабочее давление</span></li>
+          <li><b>API 6A</b><span>ГОСТ, СТ РК</span></li>
+          <li><b>24 ч</b><span>выезд бригады</span></li>
+        </ul>
+      </div>
+
+      <figure class="scheme" style="margin:0">
+        <svg viewBox="0 0 520 560" role="img" aria-label="Схема фонтанной арматуры. Снизу вверх: колонная головка, трубная головка, коренная задвижка, крестовина с боковыми струнами, задвижками и дросселями, буферная задвижка, манометр на буфере.">
+          <!-- земля -->
+          <line class="ground" x1="40" y1="508" x2="480" y2="508"/>
+          <g class="ground" stroke-dasharray="3 6"><line x1="40" y1="520" x2="480" y2="520"/><line x1="40" y1="532" x2="480" y2="532"/></g>
+
+          <!-- поток -->
+          <path class="flow" d="M260 500 V230 M260 230 H470 M260 230 H50"/>
+
+          <!-- колонная головка -->
+          <rect class="metal" x="196" y="448" width="128" height="60" rx="2"/>
+          <rect class="metal-hi" x="184" y="442" width="152" height="10"/>
+          <rect class="metal" x="140" y="466" width="56" height="22"/>
+          <rect class="metal" x="324" y="466" width="56" height="22"/>
+          <!-- трубная головка -->
+          <rect class="metal" x="210" y="392" width="100" height="50" rx="2"/>
+          <rect class="metal-hi" x="198" y="386" width="124" height="10"/>
+          <rect class="metal" x="160" y="404" width="50" height="20"/>
+          <rect class="metal" x="310" y="404" width="50" height="20"/>
+          <!-- переходник -->
+          <path class="metal" d="M228 386 L236 372 H284 L292 386 Z"/>
+
+          <!-- коренная задвижка -->
+          <rect class="metal-hi" x="226" y="364" width="68" height="8"/>
+          <rect class="metal" x="234" y="316" width="52" height="48" rx="2"/>
+          <rect class="metal-hi" x="226" y="308" width="68" height="8"/>
+          <line class="stroke" x1="286" y1="340" x2="320" y2="340" stroke-width="2"/>
+          <circle class="wheel" cx="330" cy="340" r="12"/><line class="wheel" x1="318" y1="340" x2="342" y2="340"/><line class="wheel" x1="330" y1="328" x2="330" y2="352"/>
+
+          <!-- крестовина -->
+          <rect class="metal" x="232" y="202" width="56" height="106" rx="2"/>
+          <!-- правая струна -->
+          <rect class="metal" x="288" y="214" width="34" height="32"/>
+          <rect class="metal-hi" x="322" y="208" width="8" height="44"/>
+          <rect class="metal" x="330" y="212" width="44" height="36" rx="2"/>
+          <line class="stroke" x1="352" y1="212" x2="352" y2="186" stroke-width="2"/>
+          <circle class="wheel" cx="352" cy="176" r="10"/>
+          <rect class="metal-hi" x="374" y="208" width="8" height="44"/>
+          <path class="metal" d="M382 216 H420 L428 224 V236 L420 244 H382 Z"/>
+          <rect class="metal-hi" x="428" y="214" width="8" height="32"/>
+          <rect class="metal" x="436" y="220" width="40" height="20"/>
+          <!-- левая струна -->
+          <rect class="metal" x="198" y="214" width="34" height="32"/>
+          <rect class="metal-hi" x="190" y="208" width="8" height="44"/>
+          <rect class="metal" x="146" y="212" width="44" height="36" rx="2"/>
+          <line class="stroke" x1="168" y1="212" x2="168" y2="186" stroke-width="2"/>
+          <circle class="wheel" cx="168" cy="176" r="10"/>
+          <rect class="metal-hi" x="138" y="208" width="8" height="44"/>
+          <path class="metal" d="M138 216 H100 L92 224 V236 L100 244 H138 Z"/>
+          <rect class="metal-hi" x="84" y="214" width="8" height="32"/>
+          <rect class="metal" x="44" y="220" width="40" height="20"/>
+
+          <!-- буферная задвижка -->
+          <rect class="metal-hi" x="226" y="194" width="68" height="8"/>
+          <rect class="metal" x="234" y="146" width="52" height="48" rx="2"/>
+          <rect class="metal-hi" x="226" y="138" width="68" height="8"/>
+          <line class="stroke" x1="234" y1="170" x2="200" y2="170" stroke-width="2"/>
+          <circle class="wheel" cx="190" cy="170" r="12"/><line class="wheel" x1="178" y1="170" x2="202" y2="170"/><line class="wheel" x1="190" y1="158" x2="190" y2="182"/>
+          <!-- буфер -->
+          <rect class="metal" x="240" y="110" width="40" height="28"/>
+          <rect class="metal-hi" x="236" y="104" width="48" height="8"/>
+          <!-- манометр -->
+          <line class="stroke" x1="260" y1="104" x2="260" y2="84" stroke-width="3"/>
+          <circle class="metal-hi" cx="260" cy="66" r="20"/>
+          <path d="M260 66 L270 56" stroke="#4A9AE8" stroke-width="2"/>
+          <circle cx="260" cy="66" r="2.5" fill="#4A9AE8"/>
+
+          <!-- выноски -->
+          <g>
+            <circle class="dot" cx="282" cy="62" r="3"/><path class="callout" d="M282 62 H330 L340 40 H372"/>
+            <text class="num" x="376" y="36">01</text><text class="lbl" x="376" y="51">Манометр</text>
+          </g>
+          <g>
+            <circle class="dot" cx="234" cy="150" r="3"/><path class="callout" d="M234 150 H150 L138 128 H62"/>
+            <text class="num" x="62" y="104">02</text><text class="lbl" x="62" y="120">Буферная задвижка</text>
+          </g>
+          <g>
+            <circle class="dot" cx="420" cy="216" r="3"/><path class="callout" d="M420 216 V150 H440"/>
+            <text class="num" x="444" y="140">03</text><text class="lbl" x="444" y="155">Дроссель</text>
+          </g>
+          <g>
+            <circle class="dot" cx="260" cy="290" r="3"/><path class="callout" d="M260 290 H130 L118 300 H62"/>
+            <text class="num" x="62" y="278">04</text><text class="lbl" x="62" y="294">Крестовина</text>
+          </g>
+          <g>
+            <circle class="dot" cx="342" cy="340" r="3"/><path class="callout" d="M342 340 H380 L392 320 H402"/>
+            <text class="num" x="406" y="306">05</text><text class="lbl" x="406" y="322">Коренная</text><text class="lbl" x="406" y="338">задвижка</text>
+          </g>
+          <g>
+            <circle class="dot" cx="160" cy="414" r="3"/><path class="callout" d="M160 414 H130 L118 400 H62"/>
+            <text class="num" x="62" y="380">06</text><text class="lbl" x="62" y="396">Трубная головка</text>
+          </g>
+          <g>
+            <circle class="dot" cx="380" cy="477" r="3"/><path class="callout" d="M380 477 H394 L404 456 H406"/>
+            <text class="num" x="406" y="442">07</text><text class="lbl" x="406" y="458">Колонная</text><text class="lbl" x="406" y="474">головка</text>
+          </g>
+        </svg>
+        <figcaption>Фонтанная арматура крестового типа · схема</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. Направления -->
+  <div class="dirs" aria-label="Направления работы">
+    <div class="wrap">
+      <ul>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg><div><h3>Производство</h3><p>Фонтанная арматура на собственной площадке в Атырау</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-valve"/></svg><div><h3>Монтаж и пусконаладка</h3><p>Установка на устье, опрессовка, ввод в работу</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg><div><h3>Ремонт и ревизия</h3><p>Дефектовка, замена узлов, испытания после ремонта</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-gauge"/></svg><div><h3>Сервис</h3><p>Плановое обслуживание на всём сроке эксплуатации</p></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. Продукция -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Продукция</p>
+        <h2>Фонтанная арматура</h2>
+        <p>Комплекты для эксплуатации фонтанных и газлифтных скважин. Подбираем исполнение под давление, среду и схему обвязки конкретного месторождения.</p>
+      </div>
+      <div class="two-col">
+        <div class="prod-text reveal">
+          <p class="lead">Арматура герметизирует устье, контролирует и регулирует режим работы скважины, позволяет проводить технологические операции без остановки добычи.</p>
+          <p>Изготавливаем крестовые и тройниковые схемы с ручными задвижками и регулируемыми дросселями. Каждый комплект проходит гидравлические испытания и поставляется с паспортом.</p>
+          <p>По запросу выполняем исполнение для сред с сероводородом и углекислым газом, а также доработку под существующую обвязку заказчика.</p>
+        </div>
+        <div class="reveal">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Параметры фонтанной арматуры">
+            <table>
+              <caption>Технические параметры</caption>
+              <tbody>
+                <tr><th scope="row">Рабочее давление</th><td>21–70 МПа</td></tr>
+                <tr><th scope="row">Условный проход</th><td>52–100 мм</td></tr>
+                <tr><th scope="row">Схема обвязки</th><td>крестовая, тройниковая</td></tr>
+                <tr><th scope="row">Рабочая среда</th><td>нефть, газ, среды с H₂S и CO₂</td></tr>
+                <tr><th scope="row">Стандарты</th><td>API 6A, ГОСТ, СТ РК</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Точные параметры уточняйте в техническом отделе при запросе КП.</p>
+        </div>
+      </div>
+
+      <ul class="advantages">
+        <li class="reveal"><span class="n">01</span><h3>Своё производство</h3><p>Контроль качества на каждом этапе: от заготовки до испытаний.</p></li>
+        <li class="reveal"><span class="n">02</span><h3>Испытания</h3><p>Гидроиспытания каждого комплекта, паспорт и протокол в поставке.</p></li>
+        <li class="reveal"><span class="n">03</span><h3>Под задачу</h3><p>Исполнение под давление, среду и обвязку конкретной скважины.</p></li>
+        <li class="reveal"><span class="n">04</span><h3>Сопровождение</h3><p>Монтаж, ремонт и сервис той же командой, что изготовила арматуру.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Услуги -->
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Услуги</p>
+        <h2>Работаем с устьем на всём цикле</h2>
+        <p>Обслуживаем как собственное оборудование, так и арматуру других производителей.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-valve"/></svg>
+          <h3>Монтаж и пусконаладка</h3>
+          <p>Устанавливаем и запускаем оборудование на скважине.</p>
+          <ul>
+            <li>Монтаж арматуры на устье</li>
+            <li>Обвязка и подключение к линиям</li>
+            <li>Опрессовка и проверка герметичности</li>
+            <li>Настройка и ввод в эксплуатацию</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg>
+          <h3>Ремонт и ревизия</h3>
+          <p>Восстанавливаем работоспособность в цехе и на месте.</p>
+          <ul>
+            <li>Разборка и дефектовка</li>
+            <li>Замена уплотнений, шиберов, сёдел</li>
+            <li>Восстановление посадочных поверхностей</li>
+            <li>Гидроиспытания после ремонта</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <svg class="ico" aria-hidden="true"><use href="#i-gauge"/></svg>
+          <h3>Сервисное обслуживание</h3>
+          <p>Поддерживаем оборудование в рабочем состоянии.</p>
+          <ul>
+            <li>Плановые осмотры по графику</li>
+            <li>Смазка и подтяжка узлов</li>
+            <li>Аварийный выезд бригады</li>
+            <li>Отчёт о техническом состоянии</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Как мы работаем -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Как мы работаем</p>
+        <h2>Четыре шага от заявки до сдачи</h2>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Заявка</h3>
+          <p>Вы описываете задачу: тип скважины, давление, среду, сроки.</p>
+          <span class="time">в день обращения</span>
+        </li>
+        <li class="step reveal">
+          <div class="step-num">02</div>
+          <h3>Предложение</h3>
+          <p>Инженер подбирает исполнение и готовит коммерческое предложение.</p>
+          <span class="time">1–3 рабочих дня</span>
+        </li>
+        <li class="step reveal">
+          <div class="step-num">03</div>
+          <h3>Изготовление или ремонт</h3>
+          <p>Производим или восстанавливаем оборудование, проводим испытания.</p>
+          <span class="time">по договору</span>
+        </li>
+        <li class="step reveal">
+          <div class="step-num">04</div>
+          <h3>Монтаж и сдача</h3>
+          <p>Бригада устанавливает арматуру на устье и сдаёт её по акту.</p>
+          <span class="time">с документацией</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. О компании -->
+  <section id="about" class="alt">
+    <div class="wrap two-col">
+      <div class="reveal">
+        <p class="eyebrow">О компании</p>
+        <h2>Производство и сервис в одних руках</h2>
+        <p style="margin-top:20px;font-size:17px">С 2011 года изготавливаем фонтанную арматуру и обслуживаем устьевое оборудование на месторождениях Казахстана. Одна команда отвечает за изделие от чертежа до сервиса на скважине.</p>
+        <ul class="stats">
+          <li><b>2011</b><span>год основания</span></li>
+          <li><b>1 800+</b><span>комплектов арматуры изготовлено</span></li>
+          <li><b>3 500+</b><span>единиц оборудования отремонтировано</span></li>
+        </ul>
+      </div>
+      <ul class="facts reveal">
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-cert"/></svg>
+          <h3>Сертификаты</h3>
+          <p>Продукция и система менеджмента подтверждены документами.</p>
+          <div class="badges"><span>API 6A</span><span>ISO 9001</span><span>ТР ТС 010/2011</span></div>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg>
+          <h3>Производство</h3>
+          <p>Собственный цех 6 000 м² в Атырау: механообработка, сборка, испытательный стенд.</p>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>
+          <h3>Выездные бригады</h3>
+          <p>Атырау, Актау, Актобе. Выезд на объект в течение 24 часов.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Контакты -->
+  <section id="contacts">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Контакты</p>
+        <h2>Запросите коммерческое предложение</h2>
+        <p style="margin-top:16px;color:var(--muted);font-size:17px">Оставьте заявку или позвоните — инженер свяжется с вами и уточнит параметры.</p>
+        <ul class="contact-list">
+          <li><span class="k">Телефон</span><span class="v big"><a href="tel:+77122304518" data-event="click_phone">+7 (7122) 30-45-18</a></span></li>
+          <li><span class="k">Почта</span><span class="v"><a href="mailto:info@kazustyemash.kz" data-event="click_email">info@kazustyemash.kz</a></span></li>
+          <li><span class="k">Адрес</span><span class="v">г. Атырау, ул. Промышленная, 14</span></li>
+          <li><span class="k">Режим</span><span class="v">Пн–Пт 9:00–18:00, аварийная линия — круглосуточно</span></li>
+        </ul>
+        <div class="messengers">
+          <a class="btn btn-ghost" href="https://wa.me/77122304518" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn btn-ghost" href="https://t.me/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+        </div>
+      </div>
+
+      <form class="form reveal" id="lead-form" novalidate>
+        <h3>Заявка</h3>
+        <p>Поля со звёздочкой обязательны.</p>
+        <div class="fields">
+          <div class="field">
+            <label for="f-name">Имя <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" placeholder="Как к вам обращаться">
+            <span class="err" id="e-name" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-phone" placeholder="+7 (___) ___-__-__">
+            <span class="err" id="e-phone" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="f-company">Компания</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Название организации">
+          </div>
+          <div class="field">
+            <label for="f-type">Направление</label>
+            <select id="f-type" name="type">
+              <option>Фонтанная арматура</option>
+              <option>Монтаж и пусконаладка</option>
+              <option>Ремонт и ревизия</option>
+              <option>Сервисное обслуживание</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-task">Задача</label>
+            <textarea id="f-task" name="task" placeholder="Давление, условный проход, среда, количество, сроки"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Не заполняйте это поле</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit">Отправить заявку</button>
+          <p class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных в соответствии с законодательством Республики Казахстан.</p>
+        </div>
+        <div class="form-status" id="form-status" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> КазУстьеМаш</span>
+    <span>Производство фонтанной арматуры · монтаж · ремонт · сервис устьевого оборудования</span>
+    <p class="demo">Прототип. Название, контакты, цифры и сертификаты демонстрационные и подлежат замене перед публикацией.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // Аналитика: точка подключения (Яндекс.Метрика / GA4)
+  function track(name, params) {
+    try {
+      if (window.ym && window.YM_ID) window.ym(window.YM_ID, "reachGoal", name, params);
+      if (window.gtag) window.gtag("event", name, params || {});
+    } catch (e) {}
+  }
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-event]");
+    if (el) track(el.getAttribute("data-event"));
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Мобильное меню
+  var nav = document.getElementById("nav");
+  var menuBtn = document.querySelector(".menu-btn");
+  function closeMenu() {
+    nav.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Открыть меню");
+  }
+  menuBtn.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+  });
+  nav.addEventListener("click", function (e) { if (e.target.closest("a")) closeMenu(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+
+  // Появление блоков
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  // Форма заявки
+  var form = document.getElementById("lead-form");
+  var status = document.getElementById("form-status");
+  var fName = document.getElementById("f-name");
+  var fPhone = document.getElementById("f-phone");
+
+  function setError(input, msg) {
+    var err = document.getElementById(input.getAttribute("aria-describedby"));
+    err.textContent = msg || "";
+    if (msg) input.setAttribute("aria-invalid", "true");
+    else input.removeAttribute("aria-invalid");
+  }
+  [fName, fPhone].forEach(function (inp) {
+    inp.addEventListener("input", function () { if (inp.getAttribute("aria-invalid")) setError(inp, ""); });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.hidden = true;
+    status.classList.remove("is-error");
+
+    if (form.website.value) return; // ловушка для ботов
+
+    var name = fName.value.trim();
+    var digits = fPhone.value.replace(/\D/g, "");
+    var firstBad = null;
+
+    if (!name) { setError(fName, "Укажите имя, чтобы мы знали, как к вам обращаться."); firstBad = firstBad || fName; }
+    else setError(fName, "");
+
+    if (!digits) { setError(fPhone, "Укажите телефон для связи."); firstBad = firstBad || fPhone; }
+    else if (digits.length < 10) { setError(fPhone, "В номере должно быть не меньше 10 цифр."); firstBad = firstBad || fPhone; }
+    else setError(fPhone, "");
+
+    if (firstBad) {
+      track("form_error", { field: firstBad.name });
+      firstBad.focus();
+      return;
+    }
+
+    var data = {
+      name: name,
+      phone: fPhone.value.trim(),
+      company: form.company.value.trim(),
+      type: form.type.value,
+      task: form.task.value.trim()
+    };
+
+    // Демо-режим: открываем почтовую программу с готовым письмом.
+    // Для запуска заменить на fetch() к обработчику (сервер, Formspree, Telegram-бот, CRM).
+    var body =
+      "Имя: " + data.name + "\n" +
+      "Телефон: " + data.phone + "\n" +
+      "Компания: " + (data.company || "—") + "\n" +
+      "Направление: " + data.type + "\n" +
+      "Задача: " + (data.task || "—");
+    window.location.href = "mailto:info@kazustyemash.kz?subject=" +
+      encodeURIComponent("Заявка на КП: " + data.type) + "&body=" + encodeURIComponent(body);
+
+    track("form_submit", { type: data.type });
+    status.textContent = "Спасибо, " + data.name + "! Заявка подготовлена. Инженер свяжется с вами в рабочее время.";
+    status.hidden = false;
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
